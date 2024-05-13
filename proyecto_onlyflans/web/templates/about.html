@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 text-column">
+            <h2>Somos Flansnáticos</h2>
+            <p>OnlyFlans es una empresa enfocada en el mundo de la pastelería y los postres, en especial
+                en la venta de flan(de ahí su nombre), nace en 2021 en santiago de chile como una empresa
+                familiar que pretende entregar productos de calidad a su clientela, estando ubicada en
+                providencia, a pasos del metro Parque Bustamante.</p>
+        </div>
+        <div class="col-md-6">
+            <!-- Carrusel en la columna derecha -->
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'img/imagen1.jpg' %}" class="d-block w-100 carousel-img" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/imagen2.jpg' %}" class="d-block w-100 carousel-img" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/imagen3.jpg' %}" class="d-block w-100 carousel-img" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>Al hacer un pedido ya serás parte de nuestra Flanstástica comunidad con sabores y ofertas exclusivas</h3>
+    </div>
+</div>
+{% endblock %}

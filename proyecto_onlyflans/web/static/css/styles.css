@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    /*background-color: #F3E5AB;*/
+    color: #fff;
+    padding-left: 20px;
+}
+nav {
+    color:#fff;
+    padding: 10px;
+    
+}
+
+
+footer {
+    background-color: #3D1F00;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+main {
+    padding: 20px;
+}
+
+
+
+h4 {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin: 20px; /* Agrega márgenes en todos los lados */
+}
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3D1F00;
+    color: #fff; /* Color del texto */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #da740e; /* Color de fondo al pasar el ratón */
+}
+
+.logo img {
+    width: 350px; /* Cambia este valor al tamaño deseado */
+    height: auto; /* Esto mantiene la relación de aspecto */
+}
+
+img {
+    max-width: 100%; /* Tamaño máximo */
+    max-height: 160px; /* Tamaño máximo */
+}
+
+.main-container {
+    background-color: #F3E5AB; /* Cambia el color de fondo según tu preferencia */
+    padding-top: 20px; /* Agrega un poco de espacio en la parte superior para separar el contenido del encabezado */
+    padding-bottom: 20px; /* Agrega un poco de espacio en la parte inferior para separar el contenido del pie de página */
+}
+
+
+/*Carga imagen pantalla completa pagina de inicio*/
+.fondo_inicio {
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: right;
+    height: 700px;
+    padding-top: 80px;
+    
+  }
+
+.texto-con-sombra {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 1);
+}
+
+.linea-divisoria {
+    border: 1px solid black; /* Grosor y estilo de la línea */
+    margin-top: 20px; /* Espacio superior */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+.text-column {
+    padding-top: 200px;
+    padding-bottom: 50px;
+}
+
+/* Ajustar la altura del carrusel */
+.carousel {
+    padding-top: 200px;
+}
+

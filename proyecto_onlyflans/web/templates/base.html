@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/logoico" href="{% static 'img/logoico.png' %}">
+    <title>Bienvenido a OnlyFlans</title>
+    <!-- Bootstrap -->
+    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    
+</head>
+<body>
+    <!-- cualquier mensaje de éxito que se haya establecido en las vistas se muestre correctamente en todas las páginas que extiendan de base.html-->
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+            <div id="logout-message" class="alert alert-success">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <!-- este bloque permite poner el header a la izquierda y el navbar a la derecha -->
+    <div class="container-fluid main-container">
+        <div class="row">
+            <div class="col">
+                {% include 'header.html' %}
+            </div>
+            <div class="col">
+                <!-- Columna de espacio -->
+            </div>
+            <div class="col-auto">
+                {% include 'navbar.html' %}
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container">
+        <!-- Contenido específico de cada página -->
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Incluir el componente Footer -->
+    {% include 'footer.html' %}
+    <!-- scrip para que el mensaje de cierre de sesión exitoso se oculte -->
+    <script>
+        // Selecciona el elemento del mensaje de cierre de sesión
+        const logoutMessage = document.getElementById('logout-message');
+        // Oculta el mensaje después de 5 segundos (5000 milisegundos)
+        setTimeout(() => {
+            if (logoutMessage) {
+                logoutMessage.style.display = 'none';
+            }
+        }, 5000);
+    </script>
+
+    <!-- Agregar el script de Bootstrap al final del cuerpo del documento -->
+    <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

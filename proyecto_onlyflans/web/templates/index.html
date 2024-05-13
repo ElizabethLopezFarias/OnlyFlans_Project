@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-fluid fondo_inicio" style="background-image: url('{% static 'img/img_inicio.jpg' %}');">
+        <h1 class="texto-con-sombra">¡Descubre nuestros deliciosos flanes!</h1>
+        <p class="texto-con-sombra">Explora nuestra variedad de flanes y encuentra tu favorito.</p>
+        <a class="btn" href="#flanes_basicos">Ver Flanes Básicos </a>
+    </div>
+    <br>
+    <hr id="flanes_basicos" class="linea-divisoria">
+    <h2>FLANES BÁSICOS</h2> 
+    <br>
+    <div class="container">
+        <!-- División para las cards correspondientes a cada flan -->
+        <div class="row">
+            {% for flan in flanes %}
+            <div class="col-md-3">
+                <div class="mb-4"> 
+                    <div class="card">
+                        <img src="{{ flan.image_url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ flan.name }}</h5>
+                            <p class="card-text">{{ flan.description }}</p>
+                            <a href="{% url 'hacer_pedido' %}" class="btn btn-primary">Hacer Pedido</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <br><br><br><br><br>
+    {% if not user.is_authenticated %}
+    <div class="container">
+        <p>Si ya eres cliente, accede a nuestro contenido sólo para ti <a href="{% url 'login' %}">inicia sesión</a>.</p>
+        <p></p>
+        <br><br><br><br><br><br><br>
+    </div>
+    {% endif %}
+{% endblock %}

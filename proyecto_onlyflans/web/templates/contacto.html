@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <h3 class="mb-4 text-center">¿Tienes alguna duda? Escríbenos y nos pondremos en contacto</h3>
+    <form method="post" class="row justify-content-center">
+        {% csrf_token %}
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="customer_name" class="form-label">Nombre</label>
+                <br>
+                {{ form.customer_name }}
+                {% if form.customer_name.errors %}
+                    <ul class="text-danger">
+                    {% for error in form.customer_name.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <label for="customer_email" class="form-label">Correo electrónico</label>
+                <br>
+                {{ form.customer_email }}
+                {% if form.customer_email.errors %}
+                    <ul class="text-danger">
+                    {% for error in form.customer_email.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Mensaje</label>
+                <br>
+                {{ form.message }}
+                {% if form.message.errors %}
+                    <ul class="text-danger">
+                    {% for error in form.message.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="mb-3 text-center">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
+

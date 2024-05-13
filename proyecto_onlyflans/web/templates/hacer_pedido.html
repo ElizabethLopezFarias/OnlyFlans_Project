@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <h3>¿Te gustaron nuestros sabores?, Llena este pequeño formulario para hacer un pedido y nos pondremos en contacto a la brevedad</h3>
+    <br>
+    <h2>Hacer Pedido</h2>
+    <form method="post" action="{% url 'pagina_de_confirmacion' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+    </form>
+{% endblock %}

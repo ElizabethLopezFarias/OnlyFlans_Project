@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p></p>
+    <div class="container">
+        <h1>Bienvenido, Flanstástic@ {{ user.get_username }}</h1>
+        <h3> Los más exquisitos sabores exclusivos para ti</h3>
+        <br>
+        <div class="row">
+            {% for flan in flanes %}
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="{{ flan.image_url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ flan.name }}</h5>
+                        <p class="card-text">{{ flan.description }}</p>
+                        <a href="{% url 'hacer_pedido_premium' %}" class="btn btn-primary">Hacer Pedido</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
